@@ -1,0 +1,20 @@
+day12 - crazy graphs :(
+        3h
+
+day11  - 5h
+      ; 1h input to Monkey (top-bottom)
+      ; 1h star1
+      ; 3h star2
+      had to cheat a bit and look for inspiration on reddit/go repos :)
+      https://www.reddit.com/r/adventofcode/comments/zifqmh/comment/izsn0a4
+        https://github.com/arylatt/advent-of-code/blob/main/2022/11/11.go
+day10 - 3h
+    problems with axis +/- and 0 cross-borders; tip: gotta discover the map fog ;)
+day9 - 3h KO; 6h KO = 9h
+day8 - 1.75h
+day7 - 3h
+day6 - 2h
+day5 - 3h
+
+
+

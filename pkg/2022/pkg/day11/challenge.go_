@@ -1,0 +1,170 @@
+package day11
+
+import (
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
+
+/*
+ */
+func Star1(inputFileName string) int {
+
+	return 0
+}
+
+func InputFileToMonkeys(inputFileName string) ([]*Monkey, error) {
+	data, err := os.ReadFile(inputFileName)
+	if err != nil {
+		fmt.Print(err)
+		return nil, fmt.Errorf("incorrect monkey syntax")
+	}
+
+	monkeys := []*Monkey{}
+	monkey := NewMonkey()
+	dataLines := strings.Split(string(data), "\n")
+
+	for i := 0; i < len(dataLines)-1; i += 7 {
+		//fmt.Printf("%s", dataLine)
+		monkey, err = InputToMonkeys(dataLines[i : i+7])
+		if err != nil {
+			return nil, fmt.Errorf("incorrect monkey syntax")
+		}
+		monkeys = append(monkeys, monkey)
+		monkey = NewMonkey()
+	}
+	return monkeys, nil
+}
+
+func PlayRound(monkeys []*Monkey, WorryLevelDivisor int) error {
+	const BoredomDivisor int = 3
+
+	for monkeyIdx, monkey := range monkeys {
+		for _, worryLevel := range monkey.StartingItemsWorryLevel {
+
+			worryLevel := monkey.Operation(worryLevel)
+			worryLevel = worryLevel / BoredomDivisor
+
+			destinationMonkey := monkey.MonkeyFalse
+			if worryLevel%monkey.DivisibleValue == 0 {
+				destinationMonkey = monkey.MonkeyTrue
+			}
+			monkeys[destinationMonkey].StartingItemsWorryLevel = append(monkeys[destinationMonkey].StartingItemsWorryLevel, worryLevel)
+
+			if len(monkeys[monkeyIdx].StartingItemsWorryLevel) > 1 {
+				monkeys[monkeyIdx].StartingItemsWorryLevel = monkeys[monkeyIdx].StartingItemsWorryLevel[1:]
+			} else {
+				monkeys[monkeyIdx].StartingItemsWorryLevel = []int{}
+			}
+
+			monkey.ItemsInspected += 1
+		}
+	}
+
+	return nil
+}
+
+func InputToMonkeys(dataLines []string) (*Monkey, error) {
+	if len(dataLines) != 7 {
+		return nil, fmt.Errorf("incorrect monkey syntax")
+	}
+
+	monkey := NewMonkey()
+	monkeyNumber, err := strconv.Atoi(dataLines[0][7:8])
+	if err != nil {
+		return nil, fmt.Errorf("incorrect monkey syntax")
+	}
+	monkey.Number = monkeyNumber
+
+	startingItemsTxt := dataLines[1][18:]
+	for _, startingItemTxt := range strings.Split(startingItemsTxt, ",") {
+		startingItem, err := strconv.Atoi(strings.TrimSpace(startingItemTxt))
+		if err != nil {
+			return nil, fmt.Errorf("incorrect monkey syntax")
+		}
+		monkey.StartingItemsWorryLevel = append(monkey.StartingItemsWorryLevel, startingItem)
+	}
+
+	operationOperatorTxt := string(dataLines[2][23])
+	operationValueTxt := string(dataLines[2][25:])
+	switch operationOperatorTxt {
+	case "+":
+		operationValue, err := strconv.Atoi(operationValueTxt)
+		if err != nil {
+			if operationValueTxt == "old" {
+				monkey.Operation = func(old int) int {
+					return old + old
+				}
+			}
+			return nil, fmt.Errorf("incorrect monkey syntax")
+		} else {
+			monkey.Operation = func(old int) int {
+				return old + operationValue
+			}
+		}
+		break
+
+	case "*":
+		operationValue, err := strconv.Atoi(operationValueTxt)
+		if err != nil {
+			if operationValueTxt == "old" {
+				monkey.Operation = func(old int) int {
+					return old * old
+				}
+			} else {
+				return nil, fmt.Errorf("incorrect monkey syntax")
+			}
+
+		} else {
+			monkey.Operation = func(old int) int {
+				return old * operationValue
+			}
+		}
+
+		break
+
+	default:
+		return nil, fmt.Errorf("incorrect monkey syntax")
+	}
+
+	divisibleValueTxt := dataLines[3][21:]
+	divisibleValue, err := strconv.Atoi(divisibleValueTxt)
+	if err != nil {
+		return nil, fmt.Errorf("incorrect monkey syntax")
+
+	}
+	monkey.DivisibleValue = divisibleValue
+
+	monkeyTrueTxt := dataLines[4][29:]
+	monkeyTrue, err := strconv.Atoi(monkeyTrueTxt)
+	if err != nil {
+		return nil, fmt.Errorf("incorrect monkey syntax")
+
+	}
+	monkey.MonkeyTrue = monkeyTrue
+
+	monkeyFalseTxt := dataLines[5][30:]
+	monkeyFalse, err := strconv.Atoi(monkeyFalseTxt)
+	if err != nil {
+		return nil, fmt.Errorf("incorrect monkey syntax")
+	}
+	monkey.MonkeyFalse = monkeyFalse
+
+	return monkey, nil
+}
+
+type Monkey struct {
+	Number                  int
+	StartingItemsWorryLevel []int
+	Operation               func(old int) int
+	DivisibleValue          int
+	MonkeyTrue              int
+	MonkeyFalse             int
+
+	ItemsInspected int
+}
+
+func NewMonkey() *Monkey {
+	return new(Monkey)
+}
