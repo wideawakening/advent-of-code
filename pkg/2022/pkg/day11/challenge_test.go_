@@ -1,0 +1,154 @@
+package day11
+
+import (
+	"fmt"
+	. "github.com/onsi/ginkgo/v2"
+	. "github.com/onsi/gomega"
+)
+
+var _ = Describe("challenge", func() {
+	When("given sample", func() {
+		It("converts converts to monkeys", func() {
+			monkeys, err := InputFileToMonkeys("sample.txt")
+			Expect(err).NotTo(HaveOccurred())
+			Expect(len(monkeys)).To(Equal(4))
+
+			Expect(monkeys[0].StartingItemsWorryLevel).To(Equal([]int{79, 98}))
+			Expect(monkeys[0].DivisibleValue).To(Equal(23))
+			Expect(monkeys[0].MonkeyTrue).To(Equal(2))
+			Expect(monkeys[0].MonkeyFalse).To(Equal(3))
+
+			Expect(monkeys[1].StartingItemsWorryLevel).To(Equal([]int{54, 65, 75, 74}))
+			Expect(monkeys[1].DivisibleValue).To(Equal(19))
+			Expect(monkeys[1].MonkeyTrue).To(Equal(2))
+			Expect(monkeys[1].MonkeyFalse).To(Equal(0))
+
+			Expect(monkeys[2].StartingItemsWorryLevel).To(Equal([]int{79, 60, 97}))
+			Expect(monkeys[2].DivisibleValue).To(Equal(13))
+			Expect(monkeys[2].MonkeyTrue).To(Equal(1))
+			Expect(monkeys[2].MonkeyFalse).To(Equal(3))
+
+			Expect(monkeys[3].StartingItemsWorryLevel).To(Equal([]int{74}))
+			Expect(monkeys[3].DivisibleValue).To(Equal(17))
+			Expect(monkeys[3].MonkeyTrue).To(Equal(0))
+			Expect(monkeys[3].MonkeyFalse).To(Equal(1))
+
+			Expect(monkeys[0].Operation(1)).To(Equal(19))
+			Expect(monkeys[1].Operation(1)).To(Equal(7))
+			Expect(monkeys[2].Operation(1)).To(Equal(1))
+			Expect(monkeys[3].Operation(1)).To(Equal(4))
+
+			Expect(monkeys[0].Operation(2)).To(Equal(38))
+			Expect(monkeys[1].Operation(2)).To(Equal(8))
+			Expect(monkeys[2].Operation(2)).To(Equal(4))
+			Expect(monkeys[3].Operation(2)).To(Equal(5))
+		})
+
+		It("return expected worry levels per monkey after ROUND 1", func() {
+			monkeys, err := InputFileToMonkeys("sample.txt")
+			err = PlayRound(monkeys, 3)
+			Expect(err).NotTo(HaveOccurred())
+
+			Expect(monkeys[0].StartingItemsWorryLevel).To(Equal([]int{20, 23, 27, 26}))
+			Expect(monkeys[1].StartingItemsWorryLevel).To(Equal([]int{2080, 25, 167, 207, 401, 1046}))
+			Expect(monkeys[2].StartingItemsWorryLevel).To(Equal([]int{}))
+			Expect(monkeys[3].StartingItemsWorryLevel).To(Equal([]int{}))
+		})
+
+		It("return expected worry levels per monkey after ROUND 20", func() {
+			monkeys, err := InputFileToMonkeys("sample.txt")
+			for i := 0; i < 20; i++ {
+				err = PlayRound(monkeys, 3)
+				Expect(err).NotTo(HaveOccurred())
+			}
+
+			Expect(monkeys[0].StartingItemsWorryLevel).To(Equal([]int{10, 12, 14, 26, 34}))
+			Expect(monkeys[1].StartingItemsWorryLevel).To(Equal([]int{245, 93, 53, 199, 115}))
+			Expect(monkeys[2].StartingItemsWorryLevel).To(Equal([]int{}))
+			Expect(monkeys[3].StartingItemsWorryLevel).To(Equal([]int{}))
+
+			Expect(monkeys[0].ItemsInspected).To(Equal(101))
+			Expect(monkeys[1].ItemsInspected).To(Equal(95))
+			Expect(monkeys[2].ItemsInspected).To(Equal(7))
+			Expect(monkeys[3].ItemsInspected).To(Equal(105))
+		})
+
+		FDescribeTable("return inspected items after ROUND X with NO WORRY LEVEL DIVISOR", func(numRounds int, expectedTotalItems []int, expectedDivisor int) {
+			monkeys, err := InputFileToMonkeys("sample.txt")
+			divisor := 0
+			for divisorAttempt := 1; divisorAttempt < 10000; divisorAttempt++ {
+				for i := 0; i < numRounds; i++ {
+					err = PlayRound(monkeys, divisorAttempt)
+					Expect(err).NotTo(HaveOccurred())
+				}
+
+				if monkeys[0].ItemsInspected == expectedTotalItems[0] &&
+					monkeys[1].ItemsInspected == expectedTotalItems[1] &&
+					monkeys[2].ItemsInspected == expectedTotalItems[2] &&
+					monkeys[3].ItemsInspected == expectedTotalItems[3] {
+					divisor = divisorAttempt
+					fmt.Printf("divisor is: %d", divisor)
+					break
+				}
+			}
+
+			Expect(divisor).NotTo(Equal(0))
+			Expect(divisor).To(Equal(expectedDivisor))
+
+		},
+			//Entry("_", 1, []int{2, 4, 3, 6}, 1),
+			//Entry("_", 20, []int{99, 97, 8, 103}, 1),
+			Entry("_", 1000, []int{5204, 4792, 199, 5192}, 1),
+		)
+	})
+
+	When("given sample file", func() {
+		It("resolve the multiplication of the TWO monkeys with MOST ItemsInspected", func() {
+			monkeys, err := InputFileToMonkeys("sample.txt")
+			for i := 0; i < 20; i++ {
+				err = PlayRound(monkeys, 3)
+				Expect(err).NotTo(HaveOccurred())
+			}
+
+			Expect(monkeys[0].StartingItemsWorryLevel).To(Equal([]int{10, 12, 14, 26, 34}))
+			Expect(monkeys[1].StartingItemsWorryLevel).To(Equal([]int{245, 93, 53, 199, 115}))
+			Expect(monkeys[2].StartingItemsWorryLevel).To(Equal([]int{}))
+			Expect(monkeys[3].StartingItemsWorryLevel).To(Equal([]int{}))
+
+			Expect(monkeys[0].ItemsInspected).To(Equal(101))
+			Expect(monkeys[1].ItemsInspected).To(Equal(95))
+			Expect(monkeys[2].ItemsInspected).To(Equal(7))
+			Expect(monkeys[3].ItemsInspected).To(Equal(105))
+
+			Expect(101 * 105).To(Equal(10605))
+		})
+	})
+
+	When("star 1 - given input file", func() {
+		It("resolve the multiplication of the TWO monkeys with MOST ItemsInspected", func() {
+			monkeys, err := InputFileToMonkeys("input.txt")
+			for i := 0; i < 20; i++ {
+				err = PlayRound(monkeys, 3)
+				Expect(err).NotTo(HaveOccurred())
+			}
+
+			Expect(monkeys[0].StartingItemsWorryLevel).To(Equal([]int{5, 5, 5, 3, 3, 3, 3, 3, 3, 19}))
+			Expect(monkeys[1].StartingItemsWorryLevel).To(Equal([]int{64, 7, 7, 7, 7, 7, 7, 9, 5, 270023884279, 3}))
+			Expect(monkeys[2].StartingItemsWorryLevel).To(Equal([]int{}))
+			Expect(monkeys[3].StartingItemsWorryLevel).To(Equal([]int{8, 8, 8, 8, 8, 535519, 5, 5, 3, 3, 3, 3, 3, 3, 3}))
+
+			Expect(monkeys[0].ItemsInspected).To(Equal(163))
+			Expect(monkeys[1].ItemsInspected).To(Equal(258))
+			Expect(monkeys[2].ItemsInspected).To(Equal(51))
+			Expect(monkeys[3].ItemsInspected).To(Equal(247))
+			Expect(monkeys[4].ItemsInspected).To(Equal(271))
+			Expect(monkeys[5].ItemsInspected).To(Equal(22))
+			Expect(monkeys[6].ItemsInspected).To(Equal(105))
+			Expect(monkeys[7].ItemsInspected).To(Equal(229))
+
+			result := 271 * 258
+			Expect(result).ToNot(Equal(63726))
+			Expect(result).To(Equal(69918))
+		})
+	})
+})
