@@ -2,9 +2,10 @@ package day11
 
 import (
 	"fmt"
+	"math/big"
+
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	"math/big"
 )
 
 var _ = Describe("challenge", func() {

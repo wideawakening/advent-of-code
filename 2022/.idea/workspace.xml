@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="92e45b9a-0484-43f6-b3f3-065df54a0175" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../2023/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../YYYY/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/../YYYY/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/_template/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/_template/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/_template/challenge_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/_template/challenge_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/_template/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/_template/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day1/day1.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day1/day1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day1/day1_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day1/day1_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day1/day1_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day1/day1_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day1/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day1/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day10/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day10/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day10/challenge_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day10/challenge_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day10/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day10/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day10/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day10/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day10/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day10/sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day10/test1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day10/test1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day10/test2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day10/test2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day10/test3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day10/test3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day11/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day11/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day11/challenge.go_" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day11/challenge.go_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day11/challenge_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day11/challenge_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day11/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day11/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day11/challenge_test.go_" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day11/challenge_test.go_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day11/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day11/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day11/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day11/sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day12/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day12/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day12/challenge_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day12/challenge_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day12/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day12/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day12/graph.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day12/graph.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day12/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day12/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day12/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day12/sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day12/tmp.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day12/tmp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day2/day2.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day2/day2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day2/day2_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day2/day2_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day2/day2_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day2/day2_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day2/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day2/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day3/day3.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day3/day3.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day3/day3_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day3/day3_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day3/day3_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day3/day3_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day3/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day3/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day4/day4.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day4/day4.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day4/day4_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day4/day4_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day4/day4_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day4/day4_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day4/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day4/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day5/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day5/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day5/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day5/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day5/day5_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day5/day5_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day5/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day5/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day5/mod_input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day5/mod_input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day6/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day6/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day6/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day6/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day6/day6_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day6/day6_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day6/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day6/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day7/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day7/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day7/challenge_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day7/challenge_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day7/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day7/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day7/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day7/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day8/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day8/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day8/challenge_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day8/challenge_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day8/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day8/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day8/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day8/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day9/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day9/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day9/challenge_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day9/challenge_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day9/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day9/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day9/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day9/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day9/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day9/sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day9/sample2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day9/sample2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day9/test1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day9/test1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day9/test2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day9/test2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/pkg/day9/test3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/day9/test3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/summary.png" beforeDir="false" afterPath="$PROJECT_DIR$/summary.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2022/time.txt" beforeDir="false" afterPath="$PROJECT_DIR$/time.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day1/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day1/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day1/challenge_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day1/challenge_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day1/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day1/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day1/star1_input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day1/star1_input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day1/star1_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day1/star1_sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day1/star2_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day1/star2_sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day2/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day2/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day2/challenge_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day2/challenge_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day2/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day2/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day2/star1_input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day2/star1_input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day2/star1_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day2/star1_sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day3/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day3/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day3/challenge_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day3/challenge_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day3/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day3/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day3/err_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day3/err_sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day3/star1_input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day3/star1_input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day3/star1_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day3/star1_sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day4/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day4/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day4/challenge_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day4/challenge_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day4/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day4/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day4/star_input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day4/star_input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/day4/star_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/day4/star_sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/2023/times.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../2023/times.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/_template/challenge.go" beforeDir="false" afterPath="$PROJECT_DIR$/../YYYY/pkg/_template/challenge.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/_template/challenge_suite_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../YYYY/pkg/_template/challenge_suite_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/_template/challenge_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../YYYY/pkg/_template/challenge_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/_template/star_input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../YYYY/pkg/_template/star_input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pkg/_template/star_sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../YYYY/pkg/_template/star_sample.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2Z76Z5KPQIetmbp0pVax7nCzBJI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/home/iru/src/github/advent-of-code/2023"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="go test 2022-advent/pkg/day1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="2022" />
+      <working_directory value="$PROJECT_DIR$/pkg/day1" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="2022-advent/pkg/day1" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="OPA_TEST_RUN_CONFIGURATION" factoryName="Opa configuration factory">
+      <option name="additionalargs" value="" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.go test 2022-advent/pkg/day1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>
