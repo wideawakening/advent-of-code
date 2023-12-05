@@ -38,7 +38,7 @@ var _ = Describe("challenge", func() {
 
 				Expect(Star2("star_input.txt")).To(Not(Equal(5747444)))
 				Expect(Star2("star_input.txt")).To(Not(Equal(5747456)))
-				Expect(Star2("star_input.txt")).To(Equal(0))
+				Expect(Star2("star_input.txt")).To(Equal(5747443))
 			})
 		})
 	})
