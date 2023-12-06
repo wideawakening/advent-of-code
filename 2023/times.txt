@@ -1,15 +1,27 @@
+# general
+; TIP. go `strings.Replacer`
+; TIP. go use //embed
+; TIP. if semantics prefer starting from 1, use 1 instead of 0
+
+
 #6; 19:43   - 20:30     - 20:34     ; 1h ish    ; that simple? ¯\_(ツ)_/¯
-#5; 21:48   - 23:14     - 00:30     ; 2h 42m     ; very fun!
+                                                ; TIP. on simple input files, don´t bother parsing them just use them on the tests
+                                                ; LEARN. some algebra, here quadratics; x = -b +- sqrt(b^2 - 4ac) / 2a
+
+#5; 21:48   - 23:14     - 00:30     ; 2h 42m    ; very fun!
                                                 ; did a +1 and worked. it was pure luck...
-                                                ; TIP: assert all specs
-                                                ; learn goroutines please xD
+                                                ; part 2 takes 13 minutes. could be done better
+                                                ; TIP. assert all specs
+                                                ; LEARN. goroutines, closures, channels
+                                                        https://go.dev/doc/faq#closures_and_goroutines
+                                                        https://stackoverflow.com/questions/58533613/sync-waitgroup-and-nested-loops
 
 #4; 17:10?  - 17:52  -  21:16       ; 4h 6m     ; not difficult, just me having an extra row on the input and not validating it
-                                                ; TIP: always evaluate if the order of the input reading is enough  >> to avoid recursion
-                                                ; TIP: watch-out inputs... always validate everything
+                                                ; TIP. always evaluate if the order of the input reading is enough  >> to avoid recursion
+                                                ; TIP. watch-out inputs... always validate everything
 
 #3; 17:27   - 18:56   - 21:17       ; 4h        ; ok... this was a nightmare. the specs were quite shallow and my approach did not help either :(
-                                                ; TIP: always evaluate if the order of the input reading is enough >> to avoid complexity
+                                                ; TIP. always evaluate if the order of the input reading is enough >> to avoid complexity
 
 #2; 16:10   - 17:13   - 17:36       ; 1h 26m
 #1; 19:45   - 20:50                 ; 1h 5m

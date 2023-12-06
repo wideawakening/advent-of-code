@@ -61,12 +61,12 @@ var _ = Describe("challenge", func() {
 	})
 
 	Context("Star2", func() {
-		When("given sample", func() {
+		FWhen("given sample", func() {
 			It("resolves", func() {
 				Expect(Star2("star_sample.txt", []int{79, 14, 55, 13})).To(Equal(46))
 			})
 		})
-		When("given input", func() {
+		FWhen("given input", func() {
 			It("resolves", func() {
 				result := Star2("star_input.txt", []int{
 					1187290020, 247767461, 40283135, 64738286, 2044483296, 66221787, 1777809491, 103070898, 108732160, 261552692, 3810626561, 257826205, 3045614911, 65672948, 744199732, 300163578, 3438684365, 82800966, 2808575117, 229295075,
