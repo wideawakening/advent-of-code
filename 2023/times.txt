@@ -1,8 +1,14 @@
+#5; 21:48   - 23:14  - 00:30    ; 2h 42m    ; very fun!
+                                            ; did a +1 and worked. it was pure luck...
+                                            ; TIP: assert all specs
+                                            ; learn goroutines please xD
+
 #4; 17:10?  - 17:52  -  21:16   ; 4h 6m     ; not difficult, just me having an extra row on the input and not validating it
-                                            ; tip: always evaluate if the order of the input reading is enough  >> to avoid recursion
-                                            ; tip: watch-out inputs... always validate everything
+                                            ; TIP: always evaluate if the order of the input reading is enough  >> to avoid recursion
+                                            ; TIP: watch-out inputs... always validate everything
 
 #3; 17:27   - 18:56   - 21:17   ; 4h        ; ok... this was a nightmare. the specs were quite shallow and my approach did not help either :(
-                                            ; tip: always evaluate if the order of the input reading is enough >> to avoid complexity
+                                            ; TIP: always evaluate if the order of the input reading is enough >> to avoid complexity
+
 #2; 16:10   - 17:13   - 17:36   ; 1h 26m
 #1; 19:45   - 20:50             ; 1h 5m
