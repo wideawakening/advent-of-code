@@ -2,8 +2,8 @@ package challenge
 
 import (
 	"fmt"
+	"math"
 	"os"
-	"runtime"
 	"strconv"
 	"strings"
 	"sync"
@@ -30,11 +30,6 @@ type almanacPerState struct {
 
 func Star2(inputFileName string, seeds []int) int {
 
-	fmt.Println("Version", runtime.Version())
-	fmt.Println("NumCPU", runtime.NumCPU())
-	fmt.Println("GOMAXPROCS", runtime.GOMAXPROCS(0))
-	runtime.GOMAXPROCS(runtime.NumCPU())
-
 	_, err := ReadAlmanac(inputFileName)
 	if err != nil {
 		return 0
@@ -45,57 +40,65 @@ func Star2(inputFileName string, seeds []int) int {
 		return 0
 	}
 
-	var m sync.Mutex
-	var lowestLocation = 999999999999999999
+	var lowestLocation = math.MaxInt
 
+	//lowestLocations := make(chan int)
 	//var processedSeeds []int
 	var wgPerSeedBlock sync.WaitGroup
-	//var wgPerSeed sync.WaitGroup
+	var wgPerSeed sync.WaitGroup
 
-	var seedNumber = 0
+	var m sync.Mutex
+
+	//var seedNumber = 0
 	i := 0
 	for i < len(seeds) {
-
 		wgPerSeedBlock.Add(1)
+
+		sourceSeed := seeds[i]
+		drange := seeds[i+1]
+		i = i + 2
 
 		go func() {
 			defer wgPerSeedBlock.Done()
-			sourceSeed := seeds[i]
-			drange := seeds[i+1]
-			i = i + 2
+
 			// fmt.Printf("processing seed %d with drange %d\n", sourceSeed, drange)
 
+			wgPerSeed.Add(drange)
 			for seed := sourceSeed; seed < sourceSeed+drange; seed++ {
-				//wgPerSeed.Add(1)
 				//if slices.Contains(processedSeeds, seed) {
 				//	continue
 				//}
 				//processedSeeds = append(processedSeeds, seed)
+				seed := seed
+				go func() {
+					defer wgPerSeed.Done()
+					seedAlmanac := GetSeedAlmanac(almanac, seed)
+					// fmt.Printf("%v\n", seedAlmanac)
 
-				//go func() {
-				//	defer wgPerSeed.Done()
-				seedAlmanac := GetSeedAlmanac(almanac, seed)
-				// fmt.Printf("%v\n", seedAlmanac)
-
-				if seedAlmanac.stateMap[humidityToLocation] < lowestLocation {
-					fmt.Printf("new lowest location %d for seed %d\n", seedAlmanac.stateMap[humidityToLocation], seed)
 					m.Lock()
-					lowestLocation = seedAlmanac.stateMap[humidityToLocation]
-					m.Unlock()
-				}
-				m.Lock()
-				seedNumber++
-				m.Unlock()
-				//}()
+					defer m.Unlock()
+					if seedAlmanac.stateMap[humidityToLocation] < lowestLocation {
+						fmt.Printf("new lowest location %d for seed %d\n", seedAlmanac.stateMap[humidityToLocation], seed)
+						lowestLocation = seedAlmanac.stateMap[humidityToLocation]
+					}
+					//lowestLocations <- lowestLocation
+					// seedNumber++
+					// fmt.Printf("processed %d seeds\n", seedNumber)
+				}()
 			}
-			//time.Sleep(10 * time.Millisecond)
-			//wgPerSeed.Wait()
 		}()
-		//time.Sleep(10 * time.Millisecond)
-		wgPerSeedBlock.Wait()
 	}
+	wgPerSeedBlock.Wait()
+	wgPerSeed.Wait()
+	//go func() {
+	//close(lowestLocations)
+	//}()
 
-	// fmt.Printf("processed %d seeds\n", seedNumber)
+	//for lowestLocation := range lowestLocations {
+	//	if lowestLocation < lowestLocation {
+	//		lowestLocation = lowestLocation
+	//	}
+	// }
 	return lowestLocation
 }
 
