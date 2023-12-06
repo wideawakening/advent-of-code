@@ -35,6 +35,7 @@ var _ = Describe("challenge", func() {
 				Expect(TryNumberWord("eightwothree")).To(Equal(8))
 				Expect(TryNumberWord("twothree")).To(Equal(2))
 				Expect(TryNumberWord("three")).To(Equal(3))
+
 				Expect(Star2("star2_sample.txt")).To(Equal(281))
 			})
 		})
