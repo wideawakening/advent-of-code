@@ -5,7 +5,33 @@
 
 ---
 
-#7; 20:09   - @_@ ++                ; 6h        ; passing samples and curated inputs but not reaching input
+contains SPOILERS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+
+#8; 20:00 - 20:44       - 22:10     ;2h 10m     ; part1 easy, part2 went for a full computation but that was not ending... got to reddit and learnt it was lcm.
+                                                ; TIP. if something takes more than 20' but everything seems ok on code, assume there must be some hidden trick on the puzzle.
+                                                ; TIP. lcm/gdm is used when there is a cycle. if there is no cycle, just multiply the numbers
+                                                ;  - the paths form a loop
+                                                ;  - the loop will only have 1 node ending at Z
+                                                ;  - the distance from the node to Z is the same as the distance from Z to the next Z
+
+#7; 20:09   - @_@ ++                ; 6h        ; passing samples and curated inputs from reddit, but not reaching input
                                                 ; narrowed it down to the GetHandType algorithm being wrong/too complex and had no energy to do another one.
                                                 ; had to ditch mine (FailedHandType) and use borrowed code to unlock it (Borrowed_GetHandType)
                                                 ; TIP. when having tons of edge-cases is better to go simple
