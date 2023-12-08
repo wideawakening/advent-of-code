@@ -3,6 +3,12 @@
 ; TIP. go use //embed
 ; TIP. if semantics prefer starting from 1, use 1 instead of 0
 
+---
+
+#7; 20:09   - @_@ ++                ; 6h        ; passing samples and curated inputs but not reaching input
+                                                ; narrowed it down to the GetHandType algorithm being wrong/too complex and had no energy to do another one.
+                                                ; had to ditch mine (FailedHandType) and use borrowed code to unlock it (Borrowed_GetHandType)
+                                                ; TIP. when having tons of edge-cases is better to go simple
 
 #6; 19:43   - 20:30     - 20:34     ; 1h ish    ; that simple? ¯\_(ツ)_/¯
                                                 ; TIP. on simple input files, don´t bother parsing them just use them on the tests
