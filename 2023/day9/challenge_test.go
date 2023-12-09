@@ -44,6 +44,13 @@ var _ = Describe("challenge", func() {
 				{0, 0, 0}}))
 		})
 
+		// optimized
+		//It("interpolates next value on first sequence", func() {
+		//	data := []int{10, 13, 16, 21, 30, 45}
+		//	slices.Reverse(data)
+		//	Expect(InterpolateNextValues(GenerateNextSequenceTree([][]int{data}))).To(Equal([][]int{}))
+		//})
+
 		When("given sample", func() {
 			It("resolves", func() {
 				Expect(Star("star_sample.txt", true)).To(Equal(2))
@@ -51,7 +58,7 @@ var _ = Describe("challenge", func() {
 		})
 		When("given input", func() {
 			It("resolves", func() {
-				Expect(Star("star_input.txt", true)).To(Equal(0))
+				Expect(Star("star_input.txt", true)).To(Equal(1100))
 			})
 		})
 	})

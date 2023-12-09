@@ -24,6 +24,8 @@ contains SPOILERS
 ---
 
 #9; 17:00   - ? - 18:06                         ; easy recursion
+                                                ; TIP. what comes next == newtons calculus https://www.youtube.com/watch?v=4AuV93LOPcE
+                                                ; TIP. when doing sequence to go forward, you can invert input to get backward
 
 #8; 20:00 - 20:44       - 22:10     ;2h 10m     ; part1 easy, part2 went for a full computation but that was not ending... got to reddit and learnt it was lcm.
                                                 ; TIP. if something takes more than 20' but everything seems ok on code, assume there must be some hidden trick on the puzzle.
