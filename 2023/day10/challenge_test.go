@@ -65,7 +65,9 @@ var _ = Describe("challenge", func() {
 	FContext("Star2", func() {
 		When("given sample", func() {
 			It("resolves", func() {
-				Expect(FindInsideObjectsWithinLoop("star2_sample1.txt")).To(Equal(4))
+				//Expect(FindInsideObjectsWithinLoop("star2_sample1.txt")).To(Equal(4))
+				Expect(FindInsideObjectsWithinLoop("star2_sample2.txt")).To(Equal(8))
+
 			})
 		})
 		//XWhen("given input", func() {

@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"math"
 	"os"
-	"slices"
 	"strings"
 )
 
@@ -217,20 +216,20 @@ func FindInsideObjectsWithinLoop(inputFileName string) int {
 	}
 
 	objectsWithinLoop := 0
-	for x, dataLine := range strings.Split(string(inputData), "\n") {
-		for y, data := range dataLine {
+
+	for x := 0; x < len(strings.Split(string(inputData), "\n"))-1; x++ {
+		dataLine := strings.Split(string(inputData), "\n")[x]
+		for y := 0; y < len(dataLine)-1; y++ {
+			data := dataLine[y]
 			firstPoint := GetNearestLoopPoint(MapPoint{x, y, string(data)}, loopPoints)
 			if firstPoint == nil {
 				break
 			}
 
-			// skip pipes
-			lastPointOnRow := GetLastLoopPoint(*firstPoint, loopPoints)
-			if lastPointOnRow == nil {
-				break
-			}
-			if IsHorizontalPipe(*firstPoint, *lastPointOnRow, loopPoints) {
-				break
+			possiblePipeEnd := GetEndOfPipe(*firstPoint, loopPoints)
+			if possiblePipeEnd != nil {
+				y = possiblePipeEnd.y + 1
+				continue
 			}
 
 			secondPoint := GetNextLoopPoint(*firstPoint, loopPoints)
@@ -240,11 +239,16 @@ func FindInsideObjectsWithinLoop(inputFileName string) int {
 
 			// skip adjacent points
 			if firstPoint.y+1 == secondPoint.y {
-				break
+				y = secondPoint.y + 1
+				continue
 			}
 
-			// check if data is in between firstPoint and secondPoint
-			objectsWithinLoop++
+			// TODO check if data is in between firstPoint and secondPoint
+			addObjects := secondPoint.y - (firstPoint.y + 1)
+			objectsWithinLoop += addObjects
+			fmt.Printf("computing %d objects, from %v to %v\n", addObjects, firstPoint, secondPoint)
+
+			y = secondPoint.y + 1
 		}
 	}
 
@@ -293,22 +297,36 @@ func GetNextLoopPoint(point MapPoint, loopPoints []MapPoint) *MapPoint {
 		}
 	}
 
-	if nearestY.x == point.x && nearestY.y == point.y {
+	if nearestY.x == point.x && nearestY.y == point.y || nearestY.y == math.MaxInt {
 		return nil
 	}
 	return &nearestY
 }
 
-func IsHorizontalPipe(leftCorner MapPoint, rightCorner MapPoint, loop []MapPoint) bool {
-	row := leftCorner.x
+func GetEndOfPipe(currentPoint MapPoint, loopPoints []MapPoint) *MapPoint {
 
-	leftColumn := leftCorner.y
-	rightColumn := rightCorner.y
+	var lastPipePoint *MapPoint
+	farestPoint := GetLastLoopPoint(currentPoint, loopPoints)
+	if farestPoint == nil {
+		return nil
+	}
 
-	for i := leftColumn + 1; i < rightColumn; i++ {
-		if !slices.Contains(loop, MapPoint{row, i, "-"}) {
-			return false
+	nextLoopPoint := GetNextLoopPoint(currentPoint, loopPoints)
+	if nextLoopPoint == nil {
+		return nil
+	}
+	for nextLoopPoint.symbol == "-" {
+		lastPipePoint = &MapPoint{nextLoopPoint.x, nextLoopPoint.y, nextLoopPoint.symbol}
+		nextLoopPoint = GetNextLoopPoint(*lastPipePoint, loopPoints)
+		if nextLoopPoint == nil {
+			break
 		}
 	}
-	return true
+
+	if lastPipePoint != nil {
+		lastPipePoint = GetNextLoopPoint(*lastPipePoint, loopPoints)
+		fmt.Printf("Found pipe from %v to %v\n", currentPoint, lastPipePoint)
+		return lastPipePoint
+	}
+	return nil
 }
