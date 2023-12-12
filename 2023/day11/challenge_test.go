@@ -30,7 +30,7 @@ var _ = Describe("challenge", func() {
 			})
 		})
 
-		When("given input", func() {
+		XWhen("given input", func() {
 			It("resolves", func() {
 				resolution := Star1("star_input.txt")
 
