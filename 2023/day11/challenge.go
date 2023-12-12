@@ -41,51 +41,49 @@ func Star1(inputFileName string) int {
 
 				// same row
 				if galaxy1.Y == galaxy2.Y {
-					distance := int(math.Abs(float64(galaxy1.X - galaxy2.X)))
-					expandedDistance := GetEmptyColumnsBetweenTwoPoints(galaxy1, galaxy2, emptyColumns)
-					fmt.Printf("same row. galaxy1: %v, galaxy2: %v, distance: %v, expandedDistance: %v\n", galaxy1, galaxy2, distance, len(expandedDistance))
-					totalDistance += distance + len(expandedDistance)
+					distance := int(math.Abs(float64(galaxy1.X-galaxy2.X))) - 1
+					expandedDistance := len(GetEmptyColumnsBetweenTwoPoints(galaxy1, galaxy2, emptyRows)) * 2
+					fmt.Printf("same row. galaxy1: %v, galaxy2: %v, distance: %v, expandedDistancColumns: %v\n", galaxy1, galaxy2, distance, expandedDistance)
+					totalDistance += distance + expandedDistance
 
 					if combinations[galaxy1] == nil {
 						combinations[galaxy1] = map[image.Point]int{}
 					}
-					combinations[galaxy1][galaxy2] = distance + len(expandedDistance)
+					combinations[galaxy1][galaxy2] = distance + expandedDistance
 					continue
 
 				}
 
 				// same column
 				if galaxy1.X == galaxy2.X {
-					distance := int(math.Abs(float64(galaxy1.Y - galaxy2.Y)))
-					expandedDistance := GetEmptyColumnsBetweenTwoPoints(galaxy1, galaxy2, emptyRows)
-					fmt.Printf("same column. galaxy1: %v, galaxy2: %v, distance: %v, expandedDistance: %v\n", galaxy1, galaxy2, distance, len(expandedDistance))
-					totalDistance += distance + len(expandedDistance)
+					distance := int(math.Abs(float64(galaxy1.Y-galaxy2.Y))) - 1
+					expandedDistance := len(GetEmptyRowsBetweenTwoPoints(galaxy1, galaxy2, emptyRows)) * 2
+					fmt.Printf("same column. galaxy1: %v, galaxy2: %v, distance: %v, expandedDistantRows: %v\n", galaxy1, galaxy2, distance, expandedDistance)
+					totalDistance += distance + expandedDistance
 
 					if combinations[galaxy1] == nil {
 						combinations[galaxy1] = map[image.Point]int{}
 					}
-					combinations[galaxy1][galaxy2] = distance + len(expandedDistance)
+					combinations[galaxy1][galaxy2] = distance + expandedDistance
 					continue
 				}
 
 				// different row and column
-				if galaxy1.Y != galaxy2.Y || galaxy1.X != galaxy2.X {
-					expandedDistanceRows := GetEmptyRowsBetweenTwoPoints(galaxy1, galaxy2, emptyRows)
-					expandedDistanceColumns := GetEmptyColumnsBetweenTwoPoints(galaxy1, galaxy2, emptyColumns)
+				expandedDistanceRows := len(GetEmptyRowsBetweenTwoPoints(galaxy1, galaxy2, emptyRows))
+				expandedDistanceColumns := len(GetEmptyColumnsBetweenTwoPoints(galaxy1, galaxy2, emptyColumns))
 
-					distance :=
-						int(math.Abs(float64(galaxy1.X-(galaxy2.X+len(expandedDistanceColumns))))) +
-							int(math.Abs(float64(galaxy1.Y-(galaxy2.Y+len(expandedDistanceRows)))))
+				pointDistanceX := int(math.Abs(float64(galaxy1.X - galaxy2.X)))
+				pointDistanceY := int(math.Abs(float64(galaxy1.Y - galaxy2.Y)))
+				expandedDistance := expandedDistanceRows + expandedDistanceColumns
 
-					fmt.Printf("different. galaxy1: %v, galaxy2: %v, distance: %v\n", galaxy1, galaxy2, distance)
-					totalDistance += distance
+				pointDistance := pointDistanceX + pointDistanceY + expandedDistance
+				totalDistance += pointDistance
+				fmt.Printf("different. galaxy1: %v, galaxy2: %v, totalDistance: %v\n", galaxy1, galaxy2, pointDistance)
 
-					if combinations[galaxy1] == nil {
-						combinations[galaxy1] = map[image.Point]int{}
-					}
-					combinations[galaxy1][galaxy2] = distance
-					continue
+				if combinations[galaxy1] == nil {
+					combinations[galaxy1] = map[image.Point]int{}
 				}
+				combinations[galaxy1][galaxy2] = pointDistance
 			}
 		}
 	}
@@ -124,9 +122,9 @@ func GetGalaxyLocation(inputFileName string) []image.Point {
 	totalRows = len(rows)
 	totalColumns = len(rows[0])
 
-	for x, dataLine := range rows {
+	for y, dataLine := range rows {
 		//fmt.Printf("%s", dataLine)
-		for y, dataChar := range dataLine {
+		for x, dataChar := range dataLine {
 			if dataChar == '#' {
 				points = append(points, image.Point{x, y})
 			}

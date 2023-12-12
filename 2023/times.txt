@@ -25,6 +25,9 @@ contains SPOILERS
 
 #11; 19:45 - 22:27?                             ; NOT FINISHED. sutuck on part 1
                                                 ; TIP. combinations = n!/(n-r!*r!) = 9!/(9/2)!*2! = 36
+                                                ; TIP. get cheatsheets for map visualization to convert all needs ASAP
+                                                ; TIP. manhattan distance = |x1-x2| + |y1-y2|
+                                                ; TIP. image.Point usage https://golang.org/pkg/image/#Point
 
 #10; 19:05  - 23:14     -                       ; NOT FINISHED. stuck on part 2 not finished. it's fun though
                                                 ; TIP. make domain visually simple, when possible, for better understanding https://en.wikipedia.org/wiki/Box-drawing_character

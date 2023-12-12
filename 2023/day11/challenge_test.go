@@ -9,12 +9,19 @@ var _ = Describe("challenge", func() {
 	Context("Star1", func() {
 
 		/*
-				5-9 = (1,7),(6,9)					= 9 OK
-				1-7 = (0,3),(8,7) 				= 15 OK
-				3-6 = (2,0),(1,7)					= 17 OK
-				8-9 = (9,0) - (9,4) = 5 OK
+					1-2 = (3,0),(7,1) 			= 6
+			        1-3 = (3,0),(0,2) 			= 5
+					1-4 = (3,0),(6,4) 			= 9
+					1-5 = (3,0),(1,5) 			= 9
+					1-6= (3,0),(9,6) 			= 1
+					1-7
 
-			looking good but not matching
+					5-9 = (1,5),(4,9)			= 9
+					1-7 = (3,0),(7,8) 			= 15
+					3-6 = (0,2),(9,6)			= 17
+					8-9 = (0,9) - (4,9) 		= 5
+
+				looking good but not matching
 		*/
 
 		FWhen("given sample", func() {
@@ -26,8 +33,11 @@ var _ = Describe("challenge", func() {
 		When("given input", func() {
 			It("resolves", func() {
 				resolution := Star1("star_input.txt")
+
+				Expect(resolution).NotTo(Equal(9152334)) // too low
+				Expect(resolution).NotTo(Equal(9102603)) // too low
+				Expect(resolution).To(Equal(82000210))
 				Expect(resolution).NotTo(Equal(9590997)) // too high
-				Expect(resolution).To(Equal(0))
 			})
 		})
 	})
