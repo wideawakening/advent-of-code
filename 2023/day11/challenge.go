@@ -42,7 +42,7 @@ func Star1(inputFileName string) int {
 				// same row
 				if galaxy1.Y == galaxy2.Y {
 					distance := int(math.Abs(float64(galaxy1.X-galaxy2.X))) - 1
-					expandedDistance := len(GetEmptyColumnsBetweenTwoPoints(galaxy1, galaxy2, emptyRows)) * 2
+					expandedDistance := len(GetEmptyColumnsBetweenTwoPoints(galaxy1, galaxy2, emptyColumns)) * 2
 					fmt.Printf("same row. galaxy1: %v, galaxy2: %v, distance: %v, expandedDistancColumns: %v\n", galaxy1, galaxy2, distance, expandedDistance)
 					totalDistance += distance + expandedDistance
 
