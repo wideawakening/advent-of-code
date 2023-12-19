@@ -23,7 +23,9 @@ contains SPOILERS
 
 ---
 
-#11; 19:45 - 22:27?                             ; NOT FINISHED. sutuck on part 1
+#12; 18:50 - X
+
+#11; 19:45 - X                             ; NOT FINISHED. sutuck on part 1
                                                 ; TIP. combinations = n!/(n-r!*r!) = 9!/(9/2)!*2! = 36
                                                 ; TIP. get cheatsheets for map visualization to convert all needs ASAP
                                                 ; TIP. manhattan distance = |x1-x2| + |y1-y2|
