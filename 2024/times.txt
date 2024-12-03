@@ -14,6 +14,7 @@ start - star1 finish - star2 finish
 
 
 ## day3
+20:06   - 20:25 -
 
 ## day2
 20:45 - 21:21 - n/a     ; part1 easy, part2 i complicated it too much, want to redo it sometime
