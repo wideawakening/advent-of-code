@@ -12,5 +12,12 @@
 start - star1 finish - star2 finish
 
 
+
+## day3
+
+## day2
+20:45 - 21:21 - n/a     ; part1 easy, part2 i complicated it too much, want to redo it sometime
+
 ## day1
 21:15 - 21:57 -22:06        ; easy, it ain't much but it's honest work xD
+
