@@ -19,6 +19,5 @@ def read_file (file):
             num1, num2 = map(int, data.split())
             column1.append(num1)
             column2.append(num2)
-    print('done')
     return column1, column2
 
