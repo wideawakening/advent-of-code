@@ -14,10 +14,10 @@ start - star1 finish - star2 finish
 
 
 ## day3
-20:06   - 20:25 -
+20:06   - 20:25 - 22:07     ; part1 easy, part 2 tried to do it just with a regexp with ahead/behind negative/positive lookahead but did not make it work. went for some state machine
 
 ## day2
-20:45 - 21:21 - n/a     ; part1 easy, part2 i complicated it too much, want to redo it sometime
+20:45 - 21:21 - n/a         ; part1 easy, part2 i complicated it too much, want to redo it sometime
 
 ## day1
 21:15 - 21:57 -22:06        ; easy, it ain't much but it's honest work xD
