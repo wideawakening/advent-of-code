@@ -5,7 +5,7 @@ def resolve_star1(file) -> int:
 
 def calculate_star1(content) -> int:
     total = 0
-    pattern = re.compile(r'mul\((\d{1,3}),(\d{1,3})\)')  # Groups for area, prefix, and line number
+    pattern = re.compile(r'mul\((\d{1,3}),(\d{1,3})\)')
 
     for match in pattern.finditer(content):
         num1,num2 = match.groups()
