@@ -1,0 +1,5 @@
+creation_rules:
+  - encrypted_regex: .*input.*
+    key_groups:
+      - pgp: 
+        - 657113D31274308C # at canonical
