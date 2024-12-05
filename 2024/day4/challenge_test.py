@@ -10,7 +10,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_star_1_input(self):
         result: int = challenge.resolve_star1('star_input.txt')
-        self.assertEqual(result, 2483)
+        self.assertEqual(result, 0)
 
     def test_star_2_sample(self):
         result: int = challenge.resolve_star2('star_sample.txt')

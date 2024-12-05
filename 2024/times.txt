@@ -1,12 +1,5 @@
-## tips
-- samples are ok for troubleshooting/small tests, but unless you need them **go straight for final input ASAP**.
-
-
-
-----
-
-
 # times
+
 - may contain spoilers
 - for fun, add times of
 start - star1 finish - star2 finish
@@ -25,7 +18,7 @@ start - star1 finish - star2 finish
 
 ## day2
 20:45 - 21:21 - n/a         ; part1 easy, part2 i complicated it too much, want to redo it sometime
-
+                            ; (day5) part2 pff i think i overcomplicated it too much but did some dirty code and worked. enough for the day!
 ## day1
 21:15 - 21:57 -22:06        ; easy, it ain't much but it's honest work xD
 
