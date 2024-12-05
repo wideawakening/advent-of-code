@@ -12,6 +12,11 @@
 start - star1 finish - star2 finish
 
 
+## day5
+19:00 - 19:47 - 20:27               ; part1, easy. breaking up functions makes you see things clearly indeed :) used chatgpt for file reading and structure generation
+                                    ; part2, easy but had to think a bit requirements.
+                                    ; the day i enjoyed the most so far
+
 ## day4
 19:20   - 20:25 - 21:36            ; part1, i could do it manually but was lazy and ask chagpt, it was even worse since my prompt was not specific enough and we got several misunderstanding (ex.: what a diagonal was :faceplam:) anyway... got it working after some fixings.
                                    ; part2,  made it from scratch. much simpler than part1, until you realize you don't know python nor the fact that matrix overflows to the end with negative index :yolo:
