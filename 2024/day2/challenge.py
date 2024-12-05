@@ -48,9 +48,57 @@ def resolve_star2(file) -> int:
             result +=1
     return result
 
-
-
 def is_safe_row(row) -> bool:
+    ok = is_ok_withouth_one(row) #or is_ok_within_range(row)
+    if ok:
+        print(f"safe report: {row}")
+    else:
+        print(f"unsafe report: {row}")
+
+    return ok
+
+def is_ok_within_range(row) -> bool:
+
+    dampeable = False
+    order_type = 0 # 1 asc -1 desc
+
+    for idx, number in enumerate(row):
+        try:
+            next_num = row[idx+1]
+
+            # check asc|desc
+            new_order = -1 if number < next_num else (+1 if number > next_num else 0)
+            if order_type != 0 and new_order != order_type:
+                return False
+            else:
+                order_type = new_order
+
+            diff = abs(next_num - number)
+            if diff == 0:
+                if not dampeable:
+                    return False
+                else:
+                    dampeable = False
+                continue
+
+
+            if  diff < 1 or diff > 3:
+                if not dampeable:
+                    print(f"unsafe report: {row}")
+                    return False
+                else:
+                    dampeable = False
+        except:
+            pass
+
+
+    print(f"safe report: {row}")
+    return True
+
+
+
+def is_ok_withouth_one(row) -> bool:
+    # remove one number for list, and check if its ordered ok
     for i, number in enumerate(row):
         subreport = row[:i] + row[i + 1:]
 
@@ -59,27 +107,51 @@ def is_safe_row(row) -> bool:
                 sorted(subreport, reverse=True) == subreport
         )
         if not is_sorted:
-             #print(f"unsafe report: {row}")
              continue
 
-        previous_val = 0
-        for j, number in enumerate(subreport):
-            if previous_val == 0:
-                previous_val = number
+        if is_ok_within_range(subreport):
+            return True
 
-            if abs(number - previous_val) <= 3 and (j == 0 or abs(number - previous_val) != 0):
-                previous_val = number
-            else:
-                previous_val = -1
-
-        if previous_val != -1:
-            continue
-
-        print(f"safe report: {row}")
-        return True
-
-    print(f"unsafe report: {row}")
     return False
+
+def is_ok_within_range(row) -> bool:
+
+    dampeable = False
+    order_type = 0 # 1 asc -1 desc
+
+    for idx, number in enumerate(row):
+        try:
+            next_num = row[idx+1]
+
+            # check asc|desc
+            new_order = -1 if number < next_num else (+1 if number > next_num else 0)
+            if order_type != 0 and new_order != order_type:
+                return False
+            else:
+                order_type = new_order
+
+            diff = abs(next_num - number)
+            if diff == 0:
+                if not dampeable:
+                    return False
+                else:
+                    dampeable = False
+                continue
+
+
+            if  diff < 1 or diff > 3:
+                if not dampeable:
+                    print(f"unsafe report: {row}")
+                    return False
+                else:
+                    dampeable = False
+        except:
+            pass
+
+
+    print(f"safe report: {row}")
+    return True
+
 
 # def resolve_star2(file) -> int:
 #     report = read_file(file)
