@@ -1,7 +1,6 @@
 # 2024 Advent of Code
 
 Changing go for python this year :D
-
 https://adventofcode.com/2024
 
 ## year tips/conditions
