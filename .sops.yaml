@@ -1,5 +1,8 @@
 creation_rules:
-  - encrypted_regex: .*input.*
+  - path_regex: .*
+    input_type: binary
+    output_type: binary
+    encrypted_regex: '.*'  
     key_groups:
       - pgp: 
         - 657113D31274308C # at canonical
