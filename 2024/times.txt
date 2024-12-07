@@ -5,6 +5,18 @@
 start - star1 finish - star2 finish
 
 
+
+## day7
+
+20:20 - 20:53 - 21:50               ; part1, recursive easy
+                                    ; part2, recursive, easy :-) i was not covering something trivial and got me time to figure it out. as always, reddit gave the hint. thanks community!
+
+
+
+## day6
+16:41 - done  -                     ; part1 seemed easy but was not able to get to result. i brute-forced it by doing -1  couple of times; must be some edge-case. just got lucky. went to see LOTR war of the rohirrim in between
+                                    ; part1, discovered what was wrong.. the initial rows/cols value setup  i did a +1 instead of -1 (starting from 0) deity knows why   -__________-
+
 ## day5
 19:00 - 19:47 - 20:27               ; part1, easy. breaking up functions makes you see things clearly indeed :) used chatgpt for file reading and structure generation
                                     ; part2, easy but had to think a bit requirements.
