@@ -6,6 +6,12 @@ start - star1 finish - star2 finish
 
 
 
+
+## day8
+
+16:55 - 18:40                   ; part1, tough, 2D map positions. need to check later how people optimize this to be less messy with all the cases
+
+
 ## day7
 
 20:20 - 20:53 - 21:50               ; part1, recursive easy
