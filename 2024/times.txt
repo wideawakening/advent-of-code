@@ -9,8 +9,9 @@ start - star1 finish - star2 finish
 
 ## day8
 
-16:55 - 18:40                   ; part1, tough, 2D map positions. need to check later how people optimize this to be less messy with all the cases
-
+16:55 - 18:40 - 20:43(w/break)        ; part1, tough, 2D map positions. need to check later how people optimize this to be less messy with all the cases
+                                      ; part2, i went bananas before i re-read the challenge, specifically " including the antinodes that appear on every antenna"... :facepalm: some dinner in between did me good
+                                      ; on both parts, once sample worked, input worked too, that's unusual but niceee :-)
 
 ## day7
 

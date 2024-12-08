@@ -14,7 +14,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_star_2_sample(self):
         result: int = challenge.resolve_star2('star_sample.txt')
-        self.assertEqual(0, result)
+        self.assertEqual(34, result)
 
     def test_star_2_input(self):
      result: int = challenge.resolve_star2('star_input.txt')
