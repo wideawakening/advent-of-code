@@ -5,7 +5,9 @@
 start - star1 finish - star2 finish
 
 
+## day9
 
+21:25                               ; part1, sample ok, input not. checking options, possibly id going over 9 and no being handled as a single digit
 
 ## day8
 
