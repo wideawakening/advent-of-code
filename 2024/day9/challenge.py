@@ -23,7 +23,7 @@ def list_convert_to_pre_defrag(data:str)->[]:
 def list_defrag(defrag_data:list)->[str]:
     while '.' in defrag_data:
         idx_space = defrag_data.index(".")
-        defrag_data[idx_space] = defrag_data[len(defrag_data)-1]
+        defrag_data[idx_space] = defrag_data[-1]
         defrag_data.pop()
 
     return defrag_data
@@ -38,11 +38,82 @@ def list_get_checksum(data:list) -> int:
     return total
 
 
-def resolve_star2(file) -> int:
-    read_file(file)
 
-    result = 0
-    return result
+
+
+
+
+
+
+
+
+def resolve_star2(file) -> int:
+    unfrag_data = list_convert_to_pre_defrag(read_file(file))
+    defrag_data = block_defrag(unfrag_data)
+    return list_get_checksum(defrag_data)
+
+
+def block_defrag(defrag_data:list)->[str]:
+    keep_defrag = True
+    current_id = defrag_data[::-1][0]
+    while keep_defrag or current_id < 0:
+
+        # get fitting last block
+        reversed_data = defrag_data[::-1]
+        idx_current_id = defrag_data.index(current_id)
+        size_block = get_continous_item_positions(current_id, reversed_data)
+        if size_block == -1:
+            keep_defrag = False
+
+        # get max num of empty spaces
+        idx_free = defrag_data.index(".")
+        while True:
+            size_free = get_continous_item_positions(".", defrag_data[idx_free:])
+            if size_free == -1:
+                break
+
+            if size_free >= size_block:
+                defrag_data[idx_free:idx_free+size_block] = defrag_data[idx_current_id:idx_current_id+size_block]
+                defrag_data = defrag_data[:idx_current_id] + defrag_data[idx_current_id+size_block:]
+                break
+
+            idx_free += size_free
+
+        current_id -= 1
+        print(defrag_data)
+
+    return defrag_data
+
+
+def get_continous_item_positions(item: str, search_string: list) -> int:
+    try:
+        idx_space = search_string.index(item)
+    except:
+        return -1
+
+    num_spaces = 1
+    while True:
+        try:
+            if search_string[idx_space + num_spaces] == item:
+                num_spaces += 1
+            else:
+                break
+        except:
+            break
+
+    print(f'total num spaces of {item}: {num_spaces}')
+    return num_spaces
+
+
+def block_checksum(data:list) -> int:
+    total = 0
+    id = 0
+
+    for num in data:
+        total += int(num) * id
+        id += 1
+    return total
+
 
 def read_file (file):
     with open(file) as file:

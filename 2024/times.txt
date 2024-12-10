@@ -8,7 +8,8 @@ start - star1 finish - star2 finish
 ## day9
 
 21:25 - *                               ; part1, sample ok, input not. checking options, possibly id going over 9 and no being handled as a single digit
-                                        ; part1, ok, gave it another go next day and being bit smart i could simplify all the process :) regexp out and string manipulation out, it's enough with a list
+                                        ; part1, ok, gave it another go next day and being bit smart i could simplify all the process and get a start with less than 15' work :) regexp out and string manipulation out, it's enough with a list
+                                        ; part2, wip
 ## day8
 
 16:55 - 18:40 - 20:43(w/break)        ; part1, tough, 2D map positions. need to check later how people optimize this to be less messy with all the cases
