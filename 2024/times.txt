@@ -7,8 +7,8 @@ start - star1 finish - star2 finish
 
 ## day9
 
-21:25                               ; part1, sample ok, input not. checking options, possibly id going over 9 and no being handled as a single digit
-
+21:25 - *                               ; part1, sample ok, input not. checking options, possibly id going over 9 and no being handled as a single digit
+                                        ; part1, ok, gave it another go next day and being bit smart i could simplify all the process :) regexp out and string manipulation out, it's enough with a list
 ## day8
 
 16:55 - 18:40 - 20:43(w/break)        ; part1, tough, 2D map positions. need to check later how people optimize this to be less messy with all the cases
@@ -23,7 +23,7 @@ start - star1 finish - star2 finish
 
 
 ## day6
-16:41 - done  -                     ; part1 seemed easy but was not able to get to result. i brute-forced it by doing -1  couple of times; must be some edge-case. just got lucky. went to see LOTR war of the rohirrim in between
+16:41 - *  - KO                     ; part1 seemed easy but was not able to get to result. i brute-forced it by doing -1  couple of times; must be some edge-case. just got lucky. went to see LOTR war of the rohirrim in between
                                     ; part1, discovered what was wrong.. the initial rows/cols value setup  i did a +1 instead of -1 (starting from 0) deity knows why   -__________-
 
 ## day5
