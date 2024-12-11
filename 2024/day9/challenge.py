@@ -1,3 +1,6 @@
+from sqlalchemy.dialects.postgresql.json import idx_precedence
+
+
 def resolve_star1(file) -> int:
     unfrag_data = list_convert_to_pre_defrag(read_file(file))
     defrag_data = list_defrag(unfrag_data)
@@ -50,34 +53,40 @@ def list_get_checksum(data:list) -> int:
 def resolve_star2(file) -> int:
     unfrag_data = list_convert_to_pre_defrag(read_file(file))
     defrag_data = block_defrag(unfrag_data)
-    return list_get_checksum(defrag_data)
+    return block_checksum(defrag_data)
 
 
 def block_defrag(defrag_data:list)->[str]:
+    print()
     keep_defrag = True
     current_id = defrag_data[::-1][0]
-    while keep_defrag or current_id < 0:
+    while keep_defrag and current_id > 0:
 
         # get fitting last block
         reversed_data = defrag_data[::-1]
         idx_current_id = defrag_data.index(current_id)
-        size_block = get_continous_item_positions(current_id, reversed_data)
+        size_block = get_continous_item_positions(current_id, reversed_data, False)
         if size_block == -1:
             keep_defrag = False
 
         # get max num of empty spaces
         idx_free = defrag_data.index(".")
         while True:
-            size_free = get_continous_item_positions(".", defrag_data[idx_free:])
+            if idx_free > idx_current_id:
+                break
+
+            # TODO optimize and save dot points until we assign them
+            size_free = get_continous_item_positions(".", defrag_data[idx_free:], True)
             if size_free == -1:
                 break
 
             if size_free >= size_block:
                 defrag_data[idx_free:idx_free+size_block] = defrag_data[idx_current_id:idx_current_id+size_block]
-                defrag_data = defrag_data[:idx_current_id] + defrag_data[idx_current_id+size_block:]
+                for i in range(size_block):
+                    defrag_data[idx_current_id+i] = '.'
                 break
 
-            idx_free += size_free
+            idx_free += 1
 
         current_id -= 1
         print(defrag_data)
@@ -85,8 +94,12 @@ def block_defrag(defrag_data:list)->[str]:
     return defrag_data
 
 
-def get_continous_item_positions(item: str, search_string: list) -> int:
+def get_continous_item_positions(item: str, search_string: list, from_start: False) -> int:
+    idx_space = 0
     try:
+        if from_start:
+            if search_string[0] != item:
+                return 0
         idx_space = search_string.index(item)
     except:
         return -1
@@ -101,7 +114,7 @@ def get_continous_item_positions(item: str, search_string: list) -> int:
         except:
             break
 
-    print(f'total num spaces of {item}: {num_spaces}')
+    # print(f'total num spaces of {item}: {num_spaces}')
     return num_spaces
 
 
@@ -110,6 +123,9 @@ def block_checksum(data:list) -> int:
     id = 0
 
     for num in data:
+        if num == '.':
+            id += 1
+            continue
         total += int(num) * id
         id += 1
     return total

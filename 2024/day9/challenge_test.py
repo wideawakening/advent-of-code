@@ -26,21 +26,22 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(0, result)
 
     def test_start_2_snippet(self):
-        self.assertEqual([0, 0, 9, 9, 2, 1, 1, 1, 7, 7, 7, 7, '.', 4, 4, '.', 3, 3, 3, '.', '.', '.', 5, 5, 5, 5, '.', 6, 6, 6, 6, '.', '.', '.', '.', 8, 8, 8, 8, '.', '.',],
+        self.assertEqual([0, 0, 9, 9, 2, 1, 1, 1, 7, 7, 7, '.', 4, 4, '.', 3, 3, 3, '.', '.', '.','.', 5, 5, 5, 5, '.', 6, 6, 6, 6, '.', '.', '.', '.','.', 8, 8, 8, 8, '.', '.',],
                          challenge.block_defrag([0, 0, '.', '.', '.', 1, 1, 1, '.', '.', '.', 2, '.', '.', '.', 3, 3, 3, '.', 4, 4, '.', 5, 5, 5, 5, '.', 6, 6, 6, 6, '.', 7, 7, 7, '.', 8, 8, 8, 8, 9, 9]))
 
-        # self.assertEqual(
-        #     2858,
-        #     challenge.block_checksum(
-        #         [0, 0, 9, 9, 2, 1, 1, 1, 7, 7, 7, 7, '.', 4, 4, '.', 3, 3, 3, '.', '.', '.', 5, 5, 5, 5, '.', 6, 6, 6, 6, '.', '.', '.', '.', 8, 8, 8, 8, '.', '.',]))
+        self.assertEqual(
+            2858,
+            challenge.block_checksum(
+                [0, 0, 9, 9, 2, 1, 1, 1, 7, 7, 7, '.', 4, 4, '.', 3, 3, 3, '.', '.', '.','.', 5, 5, 5, 5, '.', 6, 6, 6, 6, '.', '.', '.', '.','.', 8, 8, 8, 8, '.', '.',]))
 
 
     def test_star_2_sample(self):
         result: int = challenge.resolve_star2('star_sample.txt')
-        self.assertEqual(0, result)
+        self.assertEqual(2858, result)
 
     def test_star_2_input(self):
      result: int = challenge.resolve_star2('star_input.txt')
+     self.assertNotEqual(6341711060162, result)  # too low
      self.assertEqual(0, result)
 
 if __name__ == '__main__':
