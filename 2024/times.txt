@@ -4,6 +4,9 @@
 - for fun, add times of
 start - star1 finish - star2 finish
 
+## day10
+
+20ish -                                 ; part1, wip.  seeing wher the problem is.
 
 ## day9
 
