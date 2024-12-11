@@ -4,9 +4,15 @@
 - for fun, add times of
 start - star1 finish - star2 finish
 
+## day11
+
+22:30   - 23:04 -  00:20                ; part1, oddly, sample did not work, input yes :shrug:
+                                        ; part2, need to optimize it more
+                                        ; part2, crazy... @_@
+
 ## day10
 
-20ish -                                 ; part1, wip.  seeing wher the problem is.
+20ish -                                 ; part1, wip.  seeing where the problem is.
 
 ## day9
 
