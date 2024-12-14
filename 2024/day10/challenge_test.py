@@ -4,6 +4,24 @@ import challenge
 
 class MyTestCase(unittest.TestCase):
 
+    def test_star_1_snippet1(self):
+        challenge.max_rows = 7
+        challenge.max_cols = 8
+        result: int = challenge.resolve_star1('snippet1.txt')
+        self.assertEqual(2, result)
+
+    def test_star_1_snippet2(self):
+        challenge.max_rows = 7
+        challenge.max_cols = 8
+        result: int = challenge.resolve_star1('snippet2.txt')
+        self.assertEqual(4, result)
+
+    def test_star_1_snippet2(self):
+        challenge.max_rows = 7
+        challenge.max_cols = 8
+        result: int = challenge.resolve_star1('snippet3.txt')
+        self.assertEqual(3, result)
+
     def test_star_1_sample(self):
         challenge.max_rows = 8
         challenge.max_cols = 9
@@ -14,6 +32,7 @@ class MyTestCase(unittest.TestCase):
         challenge.max_rows = 47
         challenge.max_cols = 48
         result: int = challenge.resolve_star1('star_input.txt')
+        self.assertNotEqual(909 , result) # too high
         self.assertEqual(0, result)
 
     def test_star_2_sample(self):
