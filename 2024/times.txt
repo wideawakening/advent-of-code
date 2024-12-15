@@ -4,6 +4,12 @@
 - for fun, add times of
 start - star1 finish - star2 finish
 
+
+## day 14
+
+*   -                                    ; part1, bit tricky with edge cases but fun, 1h ish
+
+
 ## day11
 
 22:30   - 23:04 -  00:20                ; part1, oddly, sample did not work, input yes :shrug:
