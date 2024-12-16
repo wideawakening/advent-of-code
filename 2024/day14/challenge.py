@@ -12,10 +12,14 @@ def resolve_star1(file) -> int:
     return calc_quadrant(matrix)
 
 def resolve_star2(file) -> int:
-    read_file(file)
+    robots = read_file(file)
 
-    result = 0
-    return result
+    for second in range(1000000000):
+        for robot in robots:
+            robot.move()
+        print_grid(second,robots)
+
+    return 0
 
 
 def read_file (file):
@@ -117,3 +121,25 @@ def calc_quadrant(grid: []) -> int:
 
     print(q1, q2, q3, q4)
     return q1*q2*q3*q4
+
+
+def print_grid(second:int, robots: [Robot]) -> []:
+    print()
+    grid = [['.' for _ in range(max_cols)] for _ in range(max_rows)]
+
+    for robot in robots:
+        value = grid[robot.coord_row][robot.coord_col]
+        if value == '.':
+            grid[robot.coord_row][robot.coord_col] = '1'
+        else:
+            grid[robot.coord_row][robot.coord_col] =  str(int(value) + 1)
+
+    # Write the grid to the file
+    with open('possible_tree.txt', 'a') as file:
+        file.write('\n')
+        file.write(str(second))
+        file.write('\n')
+        for row in grid:
+            file.write(''.join(row) + '\n')
+        file.write('\n')
+    return grid

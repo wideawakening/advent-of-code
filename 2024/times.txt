@@ -7,7 +7,8 @@ start - star1 finish - star2 finish
 
 ## day 14
 
-*   -                                    ; part1, bit tricky with edge cases but fun, 1h ish
+* -  *                                  ; part1, bit tricky with edge cases but fun, 1h ish
+                                        ; part2, was fun. tried to work on simmetry, but went for a quicker visual resolution xD
 
 
 ## day11
