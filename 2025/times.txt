@@ -1,0 +1,10 @@
+# times
+
+- may contain spoilers
+- for fun, add times of
+start - star1_finish - star2_finish
+
+
+## day1
+21:29 - 21:57 - 99:99        ; part 1 easy, part 2 still stuck on it despite several revies :(
+                             ; solved part2 by simplifying
