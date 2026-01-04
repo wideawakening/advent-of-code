@@ -5,6 +5,14 @@
 start - star1_finish - star2_finish
 
 
+## day3
+01:00 - 01:38               ; part1 easy if you figure out what the largest jolt is about
+
+## day2
+23:30  - 00:00 - 00:54       ; part1 easy
+                             ; part2 is conceptually easy, but getting the function is bit more complex.
+                             ; i ended using chatgpt and found a simple builtin generator
+
 ## day1
-21:29 - 21:57 - 99:99        ; part 1 easy, part 2 still stuck on it despite several revies :(
+21:29 - 21:57 - 99:99        ; part1 easy, part2 still stuck on it despite several revies :(
                              ; solved part2 by simplifying
